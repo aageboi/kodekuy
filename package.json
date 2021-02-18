@@ -1,0 +1,19 @@
+{
+  "name": "kodekuy",
+  "version": "0.0.1",
+  "description": "Learn Programming ",
+  "main": "index.js",
+  "authors": {
+    "name": "Heri Gunawan",
+    "email": "aageboi@gmail.com"
+  },
+  "repository": "https://github.com/aageboi/kodekuy.git/kodekuy",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
