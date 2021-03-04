@@ -34,9 +34,11 @@
       <NavLinks class="can-hide" />
       <a
         @click="signOut()"
-        class="nav-link external"
+        class="nav-link external logout"
+        v-if="authenticated"
       >
-        Logout
+        <img :src="photoURL" width="20px" height="20px" class="profilImg" />
+        &nbsp;&middot; Logout
       </a>
     </div>
   </header>
@@ -60,7 +62,8 @@ export default {
 
   data () {
     return {
-      linksWrapMaxWidth: null
+      linksWrapMaxWidth: null,
+      authenticated: false
     }
   },
 
@@ -71,6 +74,10 @@ export default {
 
     isAlgoliaSearch () {
       return this.algolia && this.algolia.apiKey && this.algolia.indexName
+    },
+
+    photoURL () {
+      return this.$state.getters.user.photoURL
     }
   },
 
@@ -87,6 +94,9 @@ export default {
     }
     handleLinksWrapWidth()
     window.addEventListener('resize', handleLinksWrapWidth, false)
+    if (this.$store.getters.user) {
+      this.authenticated = true
+    }
   },
 
   methods: {
@@ -121,6 +131,10 @@ $navbar-horizontal-padding = 1.5rem
   line-height $navbarHeight - 1.4rem
   a, span, img
     display inline-block
+  .profilImg
+    border-radius 50%
+  .logout
+    cursor pointer
   .logo
     height $navbarHeight - 1.4rem
     min-width $navbarHeight - 1.4rem

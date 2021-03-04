@@ -1,64 +1,58 @@
 <template>
-  <main
-    class="home"
-    :aria-labelledby="data.heroText !== null ? 'main-title' : null"
-  >
-    <header class="hero">
-      <img
-        v-if="data.heroImage"
-        :src="$withBase(data.heroImage)"
-        :alt="data.heroAlt || 'hero'"
-      >
-
-      <h1
-        v-if="data.heroText !== null"
-        id="main-title"
-      >
-        {{ data.heroText || $title || 'Hello' }}
-      </h1>
-
-      <p
-        v-if="data.tagline !== null"
-        class="description"
-      >
-        {{ data.tagline || $description || 'Welcome to your VuePress site' }}
-      </p>
-
-<h1>{{ displayName }}</h1>
-      <AuthCallback />
-      <p
-        v-if="data.actionText && data.actionLink"
-        class="action"
-      >
-        <NavLink
-          class="action-button"
-          :item="actionLink"
-        />
-      </p>
-    </header>
-
-    <div
-      v-if="data.features && data.features.length"
-      class="features"
+  <main>
+    <section
+      class="heroImg" 
+      v-if="data.heroImage"
+      :style="'background-image: url(' + $withBase(data.heroImage) + ')'"
     >
+    </section>
+    <section
+      class="home"
+      :aria-labelledby="data.heroText !== null ? 'main-title' : null"
+    >
+      <header class="hero">
+        <!-- <p
+          v-if="data.tagline !== null"
+          class="description"
+        >
+          {{ data.tagline || $description || 'Welcome to your VuePress site' }}
+        </p> -->
+
+        <AuthCallback />
+        <p
+          v-if="data.actionText && data.actionLink"
+          class="action"
+        >
+          <NavLink
+            class="action-button"
+            :item="actionLink"
+          />
+        </p>
+      </header>
+
       <div
-        v-for="(feature, index) in data.features"
-        :key="index"
-        class="feature"
+        v-if="data.features && data.features.length"
+        class="features"
       >
-        <h2>{{ feature.title }}</h2>
-        <p>{{ feature.details }}</p>
+        <div
+          v-for="(feature, index) in data.features"
+          :key="index"
+          class="feature"
+        >
+          <h2>{{ feature.title }}</h2>
+          <p>{{ feature.details }}</p>
+        </div>
       </div>
-    </div>
 
-    <Content class="theme-default-content custom" />
+      <Content class="theme-default-content custom" />
 
-    <div
-      v-if="data.footer"
-      class="footer"
-    >
-      {{ data.footer }}
-    </div>
+      <div
+        v-if="data.footer"
+        class="footer"
+      >
+        {{ data.footer }}
+      </div>
+    </section>
   </main>
 </template>
 
@@ -90,6 +84,10 @@ export default {
 </script>
 
 <style lang="stylus">
+.heroImg
+  width 100%
+  height 280px
+  background-size cover
 .home
   padding $navbarHeight 2rem 0
   max-width $homePageWidth

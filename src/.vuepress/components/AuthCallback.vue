@@ -90,7 +90,7 @@ export default {
       return (
         '<img src="' +
         this.userData.photoURL +
-        '" width="20px" height="20px" class="profileImg" /> ' +
+        '" width="100px" height="100px" class="profileImg" /> ' +
         this.userData.displayName
       );
     },

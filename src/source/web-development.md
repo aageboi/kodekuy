@@ -138,7 +138,15 @@ sidebar: auto
 - [Freeicons - Free vector icons, SVG, PSD, PNG, EPS, Ai](https://freeicons.io/)
 - [Icon-icons](https://icon-icons.com/id/)
 - [Findicons - Free Icons and Icon packs | +500000 icons](https://findicons.com/)
-
+- [icons.getbootstrap.com](https://icons.getbootstrap.com)
+- [simpleicons.org](https://simpleicons.org)
+- [boxicons.com](https://boxicons.com)
+- [css.gg](https://css.gg)
+- [evil-icons.io](https://evil-icons.io)
+- [feathericons.com](https://feathericons.com)
+- [heroicons.dev](https://heroicons.dev)
+- [teenyicons.com](https://teenyicons.com)
+- [iconpark.bytedance.com](https://iconpark.bytedance.com)
 
 
 ## Illustrations
